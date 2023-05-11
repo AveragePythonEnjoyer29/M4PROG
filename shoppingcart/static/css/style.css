@@ -1,0 +1,189 @@
+@import url(https://fonts.bunny.net/css?family=lato:300,700);
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --game-background-color: #FFFFFF;
+    --gradient: linear-gradient(to right, #2c3e50, #3498db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --gradient-webkit: -webkit-linear-gradient(to right, #2c3e50, #3498db); /* Chrome 10-25, Safari 5.1-6 */
+    --gradient-backup: #2c3e50; /* fallback for old browsers */
+}
+
+html {
+    font-size: 62.5%;
+}
+
+button:hover {
+    cursor: pointer !important;
+}
+
+body {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    padding: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    background: var(--gradient-backup);
+    background: var(--gradient-webkit);
+    background: var(--gradient);
+}
+
+main {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*display: none;*/
+}
+
+.checkout {
+    width: 78%;
+    height: 80%;
+    background: var(--game-background-color);
+    padding: 4rem;
+    display: none;
+}
+
+.checkout__list {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: repeat(3, 20rem);
+}
+
+.checkout__item {
+    list-style-type: none;
+    grid-row: span 1;
+    border-bottom: .3rem solid rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkout__img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50rem 50rem;
+    gap: 2rem;
+}
+
+.games__game {
+    list-style: none;
+    background: var(--game-background-color);
+    border-radius: .5rem;
+}
+
+.games__game--third {
+    grid-column: span 2;
+}
+
+.games__figure {
+    width: 100%;
+    height: 60%;
+}
+
+.games__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.games__stars {
+    color: rgb(255, 255, 35);
+    font-size: 130;
+}
+
+.games__h2 {
+    font-size: 300%;
+    font-weight: 700;
+}
+
+.games__h3 {
+    font-size: 120%;
+    font-weight: 400;
+}
+
+.games__body {
+    padding: 2rem;
+    height: 40%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: flex-end;
+}
+
+.games__button {
+    width: 20rem;
+    border: none;
+    font-size: 90%;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    background: black;
+    padding: 1rem 2rem;
+}
+
+.shoppingCart {
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    background: black;
+    width: 8rem;
+    height: 8rem;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 100%;
+}
+
+.shoppingCart:hover {
+    cursor: pointer;
+}
+
+.shoppingCart__message {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    background: var(--gradient);
+    border: .2rem solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 50rem;
+    height: 30rem;
+    position: fixed;
+    top: 20%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0 0 5rem 0 rgba(0, 0, 0, .3);
+    color: green;
+    font-size: 130%;
+    font-weight: 400;
+    border-radius: .5rem;
+}

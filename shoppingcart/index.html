@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script defer src="/static/js/main.js"></script>
+    <title>Shoppingcart</title>
+</head>
+<body>
+
+    <section class="checkout" id="js--checkout">
+        <ul class="checkout__list">
+            <li class="checkout__item">
+                <img src="/static/img/kali1.jpeg" alt="Kali Linux sticker" class="checkout__img">
+                <p class="checkout__title">Sticker - Kali Linux</p>
+                <p class="checkout__amount">0x</p>
+            </li>
+            <li class="checkout__item">
+                <img src="/static/img/tux1.jpeg" alt="Powerd By Linux sticker" class="checkout__img">
+                <p class="checkout__title">Sticker - Powered By Linux</p>
+                <p class="checkout__amount">0x</p>
+            </li>
+            <li class="checkout__item">
+                <img src="/static/img/tux2.jpeg" alt="Use Linux sticker" class="checkout__img">
+                <p class="checkout__title">Sticker - Use Linux</p>
+                <p class="checkout__amount">0x</p>
+            </li>
+        </ul>
+    </section>
+
+    <article class="modal" id="js--shoppingModal">
+        &#10003; Item added to cart
+    </article>
+    
+    <button class="shoppingCart" id="js--cartButton">
+        Logo
+        <div id="js--cartCounter" class="shoppingCart__message">0</div>
+    </button>
+
+    <main id="js--main">
+        <ul class="games">
+            <li class="games__game">
+                <figure class="games__figure">
+                    <img src="/static/img/kali1.jpeg" alt="Kali Linux sticker" class="games__img">
+                </figure>
+
+                <section class="games__body">
+                    <h2 class="games__h2">€5</h2>
+                    <h3 class="games__h3">Sticker - Kali Linux</h3>
+
+                    <div class="games__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <button product-img="/static/img/kali1.jpeg" product-id="sticker-kali" product-name="Sticker - Kali Linux" class="games__button">Add to cart</button>
+                </section>
+            </li>
+            <li class="games__game">
+                <figure class="games__figure">
+                    <img src="/static/img/tux1.jpeg" alt="Powered By Linux sticker" class="games__img">
+                </figure>
+
+                <section class="games__body">
+                    <h2 class="games__h2">€5</h2>
+                    <h3 class="games__h3">Sticker - Powered By Linux</h3>
+
+                    <div class="games__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <button product-img="/static/img/tux1.jpeg" product-id="sticker-powered-by-linux" product-name="Sticker - Powered By Linux" class="games__button">Add to cart</button>
+                </section>
+            </li>
+            <li class="games__game games__game--third">
+                <figure class="games__figure">
+                    <img src="/static/img/tux2.jpeg" alt="Use Linux Sticker" class="games__img">
+                </figure>
+
+                <section class="games__body">
+                    <h2 class="games__h2">€5</h2>
+                    <h3 class="games__h3">Sticker - Use Linux</h3>
+
+                    <div class="games__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <button product-img="/static/img/tux2.jpeg" product-id="sticker-use-linux" product-name="Sticker - Use Linux" class="games__button">Add to cart</button>
+                </section>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

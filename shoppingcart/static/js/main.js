@@ -1,4 +1,4 @@
-const cartButtons = document.getElementsByClassName("games__button");
+const cartButtons = document.getElementsByClassName("stickers__button");
 const cartCounter = document.getElementById("js--cartCounter");
 const cartButton = document.getElementById("js--cartButton");
 const modal = document.getElementById("js--shoppingModal");
@@ -12,6 +12,7 @@ cartButton.onclick = function() {
     if (checkout.style.display == "none") {
 
         let products = `<ul class="checkout__list">`;
+        
         // edit in all the picked products
         for (let key in cart) {
 

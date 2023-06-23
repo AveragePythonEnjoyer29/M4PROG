@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.neon {
+    color: white;
+    height: 100vh;
+    background: #252A34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem;
+}
+
+.circle {
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.6);
+    animation-name: colorRotation;
+    animation-duration: 30s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.circle--first {
+    left: -10%;
+    top: -10%;
+    background: linear-gradient(#49FF00, #77D970);
+}
+
+.circle--second {
+    right: -10%;
+    top: -10%;
+    background: linear-gradient(#49FF00, #77D970);
+}
+
+.circle--third {
+    left: -10%;
+    top: 50%;
+    background: linear-gradient(#2FA4FF,#00FFDD);
+}
+
+.circle--fourth {
+    right: -10%;
+    top: 55%;
+    background: linear-gradient(#2FA4FF,#00FFDD);
+}
+
+.neon h1 {
+    font-size: 300%;
+    animation-name: popup;
+    animation-duration: .8s;
+    animation-fill-mode: backwards;
+    animation-delay: 1.2s;
+    z-index: 1;
+}
+
+.cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    height: 20rem;
+    width: 20rem;
+    background: rgba(34, 40, 49, 0.8);
+    list-style: none;
+    border: 0.1rem solid rgba(255, 255, 255, 0.6);
+    animation-name: popup;
+    animation-duration: .8s;
+    animation-fill-mode: backwards;
+
+    animation-name: colorRotation;
+    animation-duration: 30s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: .2s transform;
+}
+
+.card:nth-of-type(2) { animation-delay: .2s; }
+.card:nth-of-type(3) { animation-delay: .3s; }
+.card:nth-of-type(4) { animation-delay: .4s; }
+.card:nth-of-type(5) { animation-delay: .5s; }
+.card:nth-of-type(6) { animation-delay: .6s; }
+
+.card::after {
+    content: "";
+    color: white;
+    background: white;
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(#2FA4FF,#00FFDD);
+}
+
+.card:nth-of-type(2)::after, 
+.card:nth-of-type(4)::after, 
+.card:nth-of-type(6)::after {
+    background: linear-gradient(#49FF00, #77D970);
+}
+
+@keyframes colorRotation  {
+    from { filter: hue-rotate(0); }
+    to { filter: hue-rotate(1turn); }
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:37.5rem)  {
+    .neon { height: auto; }
+    .circle--second { display: none; }
+}

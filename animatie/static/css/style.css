@@ -1,0 +1,239 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gradient-start: #392323;
+    --gradient-end: #274046;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 2rem;    
+
+    /* fallback for old browsers */
+    background: var(--gradient-end);
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.profile {
+    width: 20rem;
+    height: 20rem;
+    background: white;
+    border-radius: 5rem;
+    box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.2);
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile:focus {
+    outline: rgb(37, 37, 37) solid 0.1rem;
+}
+
+.profile:hover {
+    cursor: pointer;
+}
+
+.profile__header {
+    height: 10rem;
+    border-radius: 5rem 5rem 0 0;
+    position: relative;
+}
+
+.profile:nth-of-type(1) .profile__header {
+    background: url(/static/img/mountain.webp);
+    background-size: 100% 100%;
+}
+
+.profile:nth-of-type(2) .profile__header {
+    background: url(/static/img/riverbed.webp);
+    background-size: 100% 100%;
+    background-position: 0% 25%;
+    background-size: cover;
+}
+
+.profile:nth-of-type(3) .profile__header {
+    background: url(/static/img/gym.webp);
+    background-size: 100% 100%;
+    background-size: cover;
+}
+
+.unknown, .known {
+    height: 15rem;
+    width: 15rem;
+    background: #eee;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.5rem solid rgba(255, 255, 255, 0.8);
+}
+
+.unknown__face {
+    width: 40%;
+    height: 40%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.unknown__body {
+    width: 80%;
+    height: 80%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.known img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.vrouw {
+    object-position: 0 -4px;
+
+}
+
+.profile__body {
+    height: calc(85% - 10rem);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.profile__footer {
+    height: 15%;
+    border-radius: 0 0 5rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile__text {
+    margin-top: 2rem;
+    font-size: 80%;
+    opacity: 0;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.8s;
+}
+
+.heart {
+    height: 2.2rem;
+    width: 2.2rem;
+    border: none;
+    background: red;
+    position: relative;
+    transform: rotate(45deg);
+    opacity: 0;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.heart::before {
+    transform: translateX(-50%);
+    
+}
+
+.heart::after {
+    transform: translateY(-50%);
+}
+
+@keyframes expand {
+    0% {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    50% {
+        width: 40rem;
+        height: 20rem;
+    }
+    
+    100% {
+        height: 40rem;
+        width: 40rem;
+    }
+
+}
+
+@keyframes popup {
+    from {
+
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popupHeart {
+    from {
+        opacity: 0;
+        transform: translateY(1rem) rotate(45deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+@media screen and (max-width: 50rem)  {
+    .profile, .profile__text, .heart {
+        animation-name: "";
+        animation-duration: 0s;
+    }
+
+    .profile {
+        height: 40rem;
+        width: 40rem;
+    }
+
+    .profile__text, .heart {
+        opacity: 1;
+    }
+}

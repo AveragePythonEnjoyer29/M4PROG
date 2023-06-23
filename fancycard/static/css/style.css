@@ -1,0 +1,153 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 8rem;
+}
+
+.circle {
+    width: 50rem;
+    height: 50rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle--first {
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #3BACB6,30%, #f73d93);
+}
+.circle--second {
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, #EB5353,70%, #ffd24c);
+}
+
+.card {
+    height: 50rem;
+    width: 40rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    position: relative;
+    background: #f8f8f8;
+}
+
+.card::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#EB5353, #FFB24C, #3BACB6, #f73d93);
+    z-index: -1;
+    animation-name: rainbow;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.card__figure {
+    width: 100%;
+    height: 30%;
+}
+
+.card__figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card__body {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card__categories {
+    display: flex;
+    gap: .7rem;
+}
+
+.card__category {
+    list-style: none;
+    color: white;
+    font-size: 70%;
+    padding: 0.5rem 2rem;
+    border-radius: 5rem;
+
+}
+
+.card__categories--controller {
+    background: #3BACB6;
+}
+.card__categories--red {
+    background: #EB5353;
+}
+.card__categories--yellow {
+    background: #ffd24c;
+}
+.card__categories--pink {
+    background: #f73d93;
+}
+
+.card__p {
+    font-size: 80%;
+    font-weight: 500;
+}
+
+.card__footer {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card__pf  {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card__footer h3 {
+    font-size: 90%;
+    font-weight: 300;
+}
+
+.card__footer p {
+    font-size: 60%;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 75rem)  {
+    body { padding: 2rem; }
+    .card { height: auto; }
+    .circle { display: none; }
+}
+
+@keyframes rainbow  {
+    from { filter: blur(10rem); }    
+    to { filter: blur(0.5rem); }
+}

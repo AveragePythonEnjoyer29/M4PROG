@@ -7,7 +7,7 @@
 }
 
 :root {
-    --game-background-color: #FFFFFF;
+    --sticker-background-color: #FFFFFF;
     --gradient: linear-gradient(to right, #2c3e50, #3498db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     --gradient-webkit: -webkit-linear-gradient(to right, #2c3e50, #3498db); /* Chrome 10-25, Safari 5.1-6 */
     --gradient-backup: #2c3e50; /* fallback for old browsers */
@@ -50,7 +50,7 @@ main {
 .checkout {
     width: 78%;
     height: 80%;
-    background: var(--game-background-color);
+    background: var(--sticker-background-color);
     padding: 4rem;
     display: none;
 }
@@ -78,50 +78,50 @@ main {
     object-fit: contain;
 }
 
-.games {
+.stickers {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50rem 50rem;
     gap: 2rem;
 }
 
-.games__game {
+.stickers__sticker {
     list-style: none;
-    background: var(--game-background-color);
+    background: var(--sticker-background-color);
     border-radius: .5rem;
 }
 
-.games__game--third {
+.stickers__sticker--third {
     grid-column: span 2;
 }
 
-.games__figure {
+.stickers__figure {
     width: 100%;
     height: 60%;
 }
 
-.games__img {
+.stickers__img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.games__stars {
+.stickers__stars {
     color: rgb(255, 255, 35);
     font-size: 130;
 }
 
-.games__h2 {
+.stickers__h2 {
     font-size: 300%;
     font-weight: 700;
 }
 
-.games__h3 {
+.stickers__h3 {
     font-size: 120%;
     font-weight: 400;
 }
 
-.games__body {
+.stickers__body {
     padding: 2rem;
     height: 40%;
     padding-top: 0;
@@ -131,7 +131,7 @@ main {
     justify-content: flex-end;
 }
 
-.games__button {
+.stickers__button {
     width: 20rem;
     border: none;
     font-size: 90%;
